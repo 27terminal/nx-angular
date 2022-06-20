@@ -1,0 +1,22 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/test-lib/src",
+  "prefix": "angular-pro",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/test-lib"],
+      "options": {
+        "jestConfig": "libs/test-lib/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/test-lib/**/*.ts", "libs/test-lib/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}
