@@ -10,6 +10,7 @@ export interface State extends EntityState<TodosEntity> {
   selectedId?: string | number; // which Todos record has been selected
   loaded: boolean; // has the Todos list been loaded
   error?: string | null; // last known error (if any)
+  counter: number; // counter
 }
 
 export interface TodosPartialState {
@@ -22,15 +23,33 @@ export const todosAdapter: EntityAdapter<TodosEntity> =
 export const initialState: State = todosAdapter.getInitialState({
   // set initial required properties
   loaded: false,
+  counter: 0,
 });
 
 const todosReducer = createReducer(
   initialState,
   on(TodosActions.init, (state) => ({ ...state, loaded: false, error: null })),
+
   on(TodosActions.loadTodosSuccess, (state, { todos }) =>
     todosAdapter.setAll(todos, { ...state, loaded: true })
   ),
-  on(TodosActions.loadTodosFailure, (state, { error }) => ({ ...state, error }))
+
+  on(TodosActions.loadTodosFailure, (state, { error }) => ({
+    ...state,
+    error,
+  })),
+
+  on(TodosActions.increment, (state) => ({
+    ...state,
+    counter: state.counter + 1,
+  })),
+
+  on(TodosActions.decrement, (state) => ({
+    ...state,
+    counter: state.counter - 1,
+  })),
+
+  on(TodosActions.reset, (state) => ({ ...state, counter: 0 }))
 );
 
 export function reducer(state: State | undefined, action: Action) {

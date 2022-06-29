@@ -4,4 +4,5 @@
 export interface TodosEntity {
   id: string | number; // Primary ID
   name: string;
+  counter: number;
 }

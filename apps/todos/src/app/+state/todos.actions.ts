@@ -12,3 +12,7 @@ export const loadTodosFailure = createAction(
   '[Todos/API] Load Todos Failure',
   props<{ error: any }>()
 );
+
+export const increment = createAction('[Todos Component] Increment');
+export const decrement = createAction('[Todos Component] Decrement');
+export const reset = createAction('[Todos Component] Reset');

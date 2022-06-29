@@ -1,1 +1,16 @@
-<angular-pro-nx-welcome></angular-pro-nx-welcome>
+<h1>Todos</h1>
+
+<ul>
+  <li *ngFor="let t of todos" class="todo">{{ t.title }}</li>
+</ul>
+
+
+<!-- <angular-pro-nx-welcome></angular-pro-nx-welcome> -->
+<button (click)="increment()">Increment</button>
+
+<!-- <div>Current Count: {{ todo$.counter | async }}</div> -->
+<div>Current Count: {{ todo.counter }}</div>
+
+<button (click)="decrement()">Decrement</button>
+
+<button (click)="reset()">Reset Counter</button>

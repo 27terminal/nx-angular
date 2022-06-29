@@ -12,8 +12,10 @@ import { TodosEffects } from './+state/todos.effects';
   declarations: [AppComponent, NxWelcomeComponent],
   imports: [
     BrowserModule,
+    StoreModule.forRoot({ todoStore: fromTodos.reducer }),
     StoreModule.forFeature(fromTodos.TODOS_FEATURE_KEY, fromTodos.reducer),
     EffectsModule.forFeature([TodosEffects]),
+    EffectsModule.forRoot([]),
   ],
   providers: [],
   bootstrap: [AppComponent],
