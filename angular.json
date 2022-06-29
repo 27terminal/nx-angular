@@ -3,6 +3,7 @@
   "version": 2,
   "projects": {
     "test-lib": "libs/test-lib",
+    "todo": "libs/todo",
     "todos": "apps/todos",
     "todos-e2e": "apps/todos-e2e"
   }

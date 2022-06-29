@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@angular-pro/test-lib": ["libs/test-lib/src/index.ts"]
+      "@angular-pro/test-lib": ["libs/test-lib/src/index.ts"],
+      "@angular-pro/todo": ["libs/todo/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
