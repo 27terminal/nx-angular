@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@angular-pro/books": ["libs/books/src/index.ts"],
       "@angular-pro/test-lib": ["libs/test-lib/src/index.ts"],
       "@angular-pro/todo": ["libs/todo/src/index.ts"]
     }
